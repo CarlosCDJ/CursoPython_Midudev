@@ -43,12 +43,12 @@ del lista1[1:3] # eliminamos los elementos del índice 1 al 3 (no incluye el ín
 print(lista1)
 
 # Más métodos útiles
-print('Ordenar listas modificando la original')
+print('Ordenar listas modificando la original') # No devuelve nada, modifica la lista original
 numbers = [3, 10, 2, 8, 99, 101]
 numbers.sort()
 print(numbers)
 
-print('Ordenar listas creando una nueva lista')
+print('Ordenar listas creando una nueva lista') #No modifica la lista original, devuelve una nueva lista ordenada
 numbers = [3, 10, 2, 8, 99, 101]
 sorted_numbers = sorted(numbers)
 print(sorted_numbers)
@@ -60,7 +60,7 @@ print(sorted_frutas)
 
 print("Ordenar una lista de cadenas de texto (mezclas mayúscula y minúscula)")
 frutas = ['manzana', 'Pera', 'Limón', 'manzana', 'pera', 'limón']
-frutas.sort(key=str.lower)
+frutas.sort(key=str.lower) #Antes de ordenar, convierte cada elemento a minúscula para comparar
 print(frutas)
 
 # Más cositas útiles

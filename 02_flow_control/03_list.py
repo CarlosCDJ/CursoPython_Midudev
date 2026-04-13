@@ -43,7 +43,7 @@ print(lista1[:]) # [1, 2, 3, 4, 5]
 # El tercer parámetro es el paso (step)
 lista1 = [1, 2, 3, 4, 5, 6, 7, 8]
 print(lista1[::2]) # para devolver índices pares
-print(lista1[::-1]) # para devolver índices inversos
+print(lista1[::-1]) # para devolver índices inversos ¡¡¡Darle la vuelta a la lista!!!
 
 # Modificar una lista
 lista1[0] = 20
@@ -72,10 +72,20 @@ print("Longitud de la lista", len(lista1))
 # mensaje = ["C", "o", "d", "i", "g", "o", " ", "s", "e", "c", "r", "e", "t", "o"]
 # Utilizando slicing y concatenación, crea una nueva lista que contenga solo el mensaje "secreto".
 
+mensaje = ["C", "o", "d", "i", "g", "o", " ", "s", "e", "c", "r", "e", "t", "o"]
+rdo = mensaje[7:] 
+print(f"rdo: {rdo}")
 # Ejercicio 2: Intercambio de posiciones
 # Dada la siguiente lista:
 # numeros = [10, 20, 30, 40, 50]
 # Intercambia la primera y la última posición utilizando solo asignación por índice.
+numeros = [10, 20, 30, 40, 50]
+print(f"numeros: {numeros}")
+a = numeros[0]
+b = numeros[-1]
+numeros[0] = b
+numeros[-1] = a
+print(f"numeros: {numeros}")
 
 # Ejercicio 3: El sándwich de listas
 # Dadas las siguientes listas:
@@ -83,17 +93,40 @@ print("Longitud de la lista", len(lista1))
 # ingredientes = ["jamón", "queso", "tomate"]
 # pan_abajo = ["pan abajo"]
 # Crea una lista llamada sandwich que contenga el pan de arriba, los ingredientes y el pan de abajo, en ese orden.
+pan = ["pan arriba"]
+ingredientes = ["jamón", "queso", "tomate"]
+pan_abajo = ["pan abajo"]
+sandwich = pan + ingredientes + pan_abajo
+print(sandwich)
 
 # Ejercicio 4: Duplicando la lista
 # Dada una lista:
 # lista = [1, 2, 3]
 # Crea una nueva lista que contenga los elementos de la lista original duplicados.
 # Ejemplo: [1, 2, 3] -> [1, 2, 3, 1, 2, 3]
+lista = [1, 2, 3]
+lista2 = lista[:]
+lista2+= lista[:]
+print(f"lista2: {lista2}")
+
 
 # Ejercicio 5: Extrayendo el centro
 # Dada una lista con un número impar de elementos, extrae el elemento que se encuentra en el centro de la lista utilizando slicing.
 # Ejemplo: lista = [10, 20, 30, 40, 50] -> El centro es 30
+lista = [10, 20, 30, 40, 50]
+int = lista[2:3]
+
+print(f"Elemento del centro: {int}")
 
 # Ejercicio 6: Reversa parcial
 # Dada una lista, invierte solo la primera mitad de la lista (utilizando slicing y concatenación).
 # Ejemplo: lista = [1, 2, 3, 4, 5, 6] -> Resultado: [3, 2, 1, 4, 5, 6]
+
+lista = [1, 2, 3, 4, 5, 6]
+lista1 = lista[:3]
+lista1 = lista1[::-1]
+lista2 = lista[3:]
+lista3 = lista1 + lista2
+print(f"Lista 3 Lista con la primera mitad invertida: {lista3}")
+lista4 = lista3
+print(f"Lista 4 Lista con la primera mitad invertida: {lista4}")
