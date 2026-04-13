@@ -155,3 +155,10 @@ print(mensaje)
 # - Adolescente (13-17 años)
 # - Adulto (18-64 años)
 # - Adulto mayor (65 años o más)
+i = 15
+if (i == 15):
+  print("Es igual a 15")
+elif (i > 10):
+  print("Es mayor que 10")
+else:
+  print("Es menor o igual que 10")

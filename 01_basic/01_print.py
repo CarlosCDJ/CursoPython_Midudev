@@ -15,6 +15,7 @@ from os import system
 # en MacOS/Linux usando "clear" como en Windows con "cls"
 if system("clear") != 0: system("cls")
 
+
 # Este es un ejemplo básico de cómo imprimir un texto en consola
 print("¡Hola, Twitch!")
 
