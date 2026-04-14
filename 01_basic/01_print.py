@@ -17,7 +17,7 @@ if system("clear") != 0: system("cls")
 
 
 # Este es un ejemplo básico de cómo imprimir un texto en consola
-print("¡Hola, Twitch!")
+print("¡Hola, Twitch!!")
 
 # También puedes usar comillas simples para imprimir texto
 print('Esto también funciona con una comilla')
