@@ -50,7 +50,9 @@ if system("clear") != 0: system("cls")
 # print(multiplicar(2, 3))
 
 # Argumentos por posición
-def describir_persona(nombre: str, edad: int, sexo: str):
+# CDJ: Tambien funcion sin ponerle los tipos de datos a los parámetros, aunque es recomendable ponerlos para mejorar la legibilidad y evitar errores
+#def describir_persona(nombre: str, edad: int, sexo: str): #Midudev: con tipos de datos
+def describir_persona(nombre, edad, sexo): #CDJ: sin tipos de datos
   print(f"Soy {nombre}, tengo {edad} años y me identifico como {sexo}")
 
 # parámetros son posicionales
