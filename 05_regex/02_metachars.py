@@ -3,6 +3,22 @@
 # Los metacaracteres son simbolos especiales con significados especificos en las expresiones regulares
 ###
 
+# CDJ ¿Por qué ponemos la r delante de las cadenas de texto en los patrones de regex?
+# La r delante de una cadena de texto indica que es una cadena de tipo "pattern raw" o "cadena cruda". 
+# Esto significa que los caracteres de escape dentro de la cadena se interpretan literalmente, en lugar de ser tratados como caracteres especiales. Por ejemplo, en una cadena normal, el carácter de escape \n se interpreta como un salto de línea, pero en una cadena raw, se interpreta como los caracteres \ y n. Esto es especialmente útil en las expresiones regulares, donde a menudo se utilizan caracteres de escape para definir patrones específicos. Al usar una cadena raw, puedes escribir tus patrones de regex sin preocuparte por escapar los caracteres especiales, 
+# lo que hace que el código sea más legible y fácil de escribir. 
+# Cuando hablamos de caracteres de escape nos referimos a caracteres como \, que se utilizan para 
+# indicar que el siguiente carácter debe ser tratado de manera especial. 
+# Por ejemplo, en una cadena normal, si quieres incluir una barra invertida (\) en tu patrón de regex, 
+# tendrías que escribirla como \\, lo que puede resultar confuso. 
+# Sin embargo, al usar una cadena raw (con la r delante), puedes escribir la barra invertida directamente 
+# como \, sin necesidad de escapar, lo que hace que el patrón sea más claro y fácil de entender.
+# La contrabarra invertida (\) es un carácter de escape en las expresiones regulares, lo que significa que se utiliza 
+#   para indicar que el siguiente carácter debe ser tratado de manera especial.
+# El + significa que el carácter o grupo anterior debe aparecer una o más veces.
+# El * significa que el carácter o grupo anterior debe aparecer cero o más veces.
+# El ? significa que el carácter o grupo anterior es opcional, es decir, puede aparecer cero o una vez.
+
 import re
 
 # 1. El punto (.)
@@ -47,10 +63,17 @@ matches = re.findall(pattern, text)
 print(matches)
 
 # \d: coincide con cualquier dígito (0-9)
+# CDJ: las llaves sirven para especificar el número de veces que debe repetirse un patrón
+text = "El número de teléfono es 123456789"
+found = re.findall(r'\d', text)
+print(found)
+
+text = "El número de teléfono es 123456789"
+found = re.findall(r'\d\d\d', text)
+print(found)
 
 text = "El número de teléfono es 123456789"
 found = re.findall(r'\d{9}', text)
-
 print(found)
 
 # Ejercicio: Detectar si hay un número de España en el texto gracias al prefijo +34
@@ -59,6 +82,7 @@ text = "Mi número de teléfono es +34 688999999 apúntalo vale?"
 pattern = r"\+34 \d{9}"
 found = re.search(pattern, text)
 if found: print(f"Encontré el número de teléfono {found.group()}")
+else: print("No se encontró el número de teléfono")
 
 # \w: Coincide con cualquier caracter alfanumerico (a-z, A-Z, 0-9, _)
 
@@ -111,6 +135,9 @@ else: print("El correo no es válido")
 # EJERCICIO:
 # Tenemos una lista de archivos, necesitamos saber los nombres de los ficheros con extension .txt
 files = "file1.txt file2.pdf midu-of.webp secret.txt"
+pattern = r"\b[\w-]+\.txt\b"
+found = re.findall(pattern, files)
+print(found)
 
 # \b: Coincide con el principio o final de una palabra
 text = "casa casada cosa cosas casado casa"
